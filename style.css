@@ -17,6 +17,7 @@ html {
 
 body {
     background-color: #1e1e1e;
+    overflow-y: hidden;
 }
 
 .nav {
@@ -25,6 +26,7 @@ body {
 
 .editor {
     height: 100vh;
+    width: auto;
 }
 
 .tabs {

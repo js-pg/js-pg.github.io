@@ -7,6 +7,7 @@ require(["vs/editor/editor.main"], function() {
 }`,
     language: 'javascript',
     theme: 'vs-dark',
+    fontSize: "20px"
   });
 });
 
@@ -21,6 +22,7 @@ require(["vs/editor/editor.main"], function() {
 `<div class="container">
     <h1>Hello World!</h1>
 </div>`,
+    fontSize: "20px",
     language: 'html',
     theme: 'vs-dark',
   });
@@ -39,6 +41,7 @@ require(["vs/editor/editor.main"], function() {
       font-family: Arial, sans-serif;
 }`,
     language: 'css',
+    fontSize: "20px",
     theme: 'vs-dark',
   });
 });
@@ -59,7 +62,7 @@ function showTab(which){
     hide('code1', 'code2', 'code3')
     show(which)
 
-    document.getElementById('displayLang').innerText = 'JS'
+    document.getElementById('displayLang').innerText = 'Language: JS'
 
     window.location.hash='Javascript';
   }
@@ -67,7 +70,7 @@ function showTab(which){
     hide('code', 'code2', 'code3')
     show(which)    
 
-    document.getElementById('displayLang').innerText = 'HTML'
+    document.getElementById('displayLang').innerText = 'Language: HTML'
 
     window.location.hash='HTML';
   }
@@ -75,7 +78,7 @@ function showTab(which){
     hide('code', 'code1', 'code3')
     show(which)
 
-    document.getElementById('displayLang').innerText = 'CSS'
+    document.getElementById('displayLang').innerText = 'Language: CSS'
 
     window.location.hash='CSS';
   }
@@ -91,6 +94,21 @@ function showTab(which){
 
 function updateIframe() {
   var myFrame = $("#output").contents().find('body');
-  var textareaValue = '<head><style>' + editor2.getValue() + '</style></head><body>' + editor1.getValue() + '</body>';
+  var textareaValue = 
+`
+<html>
+  <head>
+    <style>
+      ${editor2.getValue()}
+    </style>
+  </head>
+  <body>
+    ${editor1.getValue()}
+    <script>
+      ${editor.getValue()}
+    </script>
+  </body>
+</html>
+`
   myFrame.html(textareaValue);
 }

@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    border: none;
+    outline: none;
+    font-family: 'Space Mono', 'Inconsolata', monospace, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #1e1e1e;
+}
+
+.bg-main {
+    background-color: #272727;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+.nav {
+    background-color: #1e1e1e;
+}
+
+.editor {
+    height: 100vh;
+}
+
+.tabs {
+    height: 2em;
+    width: 50%;
+    border: 1px solid #272727;
+    margin-left: auto;
+    margin-right: 10em;
+}
+
+.tab {
+    border: 1px solid #363636;
+    transition-duration: .22s;
+    cursor: pointer;
+
+}
+
+.tab:hover {
+    background-color: #2e2e2e;
+    border: 1px solid #626262;
+
+}
+
+.text--small {
+    font-size: 1rem;
+    border-right: 1px solid #363636;
+    white-space: nowrap;
+}
+
+iframe {
+    background-color: white;
+    margin: 0;
+}
+
+.run-pg {
+    background-color: #4b7bff;
+}
+
+.run-pg:hover {
+    background-color: #3564e7;
+}

@@ -92,6 +92,16 @@ function showTab(which){
   }
 }
 
+
+/*
+===========================
+Outputs and Local Storage:
+============================
+*/
+
+
+
+
 function updateIframe() {
   var myFrame = $("#output").contents().find('body');
   var textareaValue = 
@@ -111,4 +121,10 @@ function updateIframe() {
 </html>
 `
   myFrame.html(textareaValue);
-}
+};
+
+document.onkeyup = function(e) {
+ if (e.ctrlKey && e.altKey && e.which == 83) {
+    updateIframe()
+  }
+};

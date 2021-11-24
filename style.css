@@ -122,5 +122,5 @@ a:hover {
 }
 
 .font-size-small {
-    font-size: .85vw;
+    font-size: .85vw !important;
 }

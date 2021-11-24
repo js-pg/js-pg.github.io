@@ -148,9 +148,3 @@ a:hover {
 .text-less {
     color: rgb(182, 182, 182);
 }
-
-@media screen and (max-width: 1180px) {
-    .font-size-small {
-        font-size: 11px;
-    }
-}

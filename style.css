@@ -17,6 +17,9 @@ html {
 
 body {
     background-color: #1e1e1e;
+}
+
+html {
     overflow-y: hidden;
 }
 
@@ -116,4 +119,8 @@ a:hover {
 
 .text-highlight {
     color: #ff004f;
+}
+
+.font-size-small {
+    font-size: .85vw;
 }

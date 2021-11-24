@@ -82,12 +82,6 @@ iframe {
     position: relative;
 }
 
-#tooltipdemo:not(:hover)::after {
-    opacity: 0%;
-    transition-duration: .3s;
-    background-color: red;
-}
-
 #tooltipdemo:hover::after {
     transition-delay: 0.5s;
     opacity: 100%;
@@ -107,6 +101,32 @@ iframe {
     line-height: 18px;
     text-transform: capitalize;
     cursor: default;
+}
+
+#tooltipdemo2 {
+    position: relative;
+}
+
+#tooltipdemo2:hover::after {
+    transition-delay: 0.5s;
+    opacity: 100%;
+    content: "Click to add selected boiler plate example to preview";
+    text-align: left;
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    border: 1px #5c5c5c solid;
+    padding: 8px;
+    color: rgb(202, 202, 202);
+    background-color: #363636;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 18px;
+    cursor: default;
+    font-size: .6em;
 }
 
 a {

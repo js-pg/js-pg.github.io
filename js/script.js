@@ -19,7 +19,11 @@ require(["vs/editor/editor.main"], function() {
 require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs' } });
 require(["vs/editor/editor.main"], function() {
     editor1 = monaco.editor.create(document.getElementById('code1'), {
-        value: `<div class="container">
+        value: `
+<head>
+      <title>JS Playground</title>
+</head>        
+<div class="container">
     <h1>Hello World!</h1>
 </div>`,
         fontSize: "20px",

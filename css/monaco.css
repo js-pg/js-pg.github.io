@@ -1,0 +1,8 @@
+.monaco-tree-rows .content {
+    padding: 0;
+    margin: 0;
+}
+
+.quick-open-widget .quick-open-tree .quick-open-entry>.row {
+    margin: 0;
+}

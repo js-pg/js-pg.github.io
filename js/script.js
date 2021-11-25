@@ -19,10 +19,9 @@ require(["vs/editor/editor.main"], function() {
 require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs' } });
 require(["vs/editor/editor.main"], function() {
     editor1 = monaco.editor.create(document.getElementById('code1'), {
-        value: `
-<head>
+        value: `<head>
       <title>JS Playground</title>
-</head>        
+</head>
 <div class="container">
     <h1>Hello World!</h1>
 </div>`,
@@ -102,7 +101,35 @@ Outputs and Local Storage:
 */
 
 
+function openWindow() {
+    var i, l, options = [{
+            value: 'first',
+            text: 'First'
+        }, {
+            value: 'second',
+            text: 'Second'
+        }],
+        newWindow = window.open("", null, "height=200,width=400,status=yes,toolbar=no,menubar=no,location=no,resizable=yes");
 
+    newWindow.document.close();
+    newWindow.document.open();
+
+    newWindow.document.write(`
+        <html>
+          <head>
+            <style>
+              ${editor2.getValue()}
+            </style>
+          </head>
+          <body>
+            ${editor1.getValue()}
+            <script>
+              ${editor.getValue()}
+            </script>
+          </body>
+        </html>
+        `);
+}
 
 function updateIframe() {
     var myFrame = $("#output").contents().find('body');
@@ -123,6 +150,9 @@ function updateIframe() {
 </html>
 `
     myFrame.html(textareaValue);
+    if (document.getElementById('flexSwitchCheckDefault').checked == true) {
+        openWindow();
+    };
 };
 
 document.onkeyup = function(e) {

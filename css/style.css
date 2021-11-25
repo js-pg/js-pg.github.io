@@ -85,7 +85,7 @@ iframe {
 #tooltipdemo:hover::after {
     transition-delay: 0.5s;
     opacity: 100%;
-    content: "Update and run given code to output";
+    content: "Update and run given code to output. (Or pop-up if enabled) \A Shortcut: Ctrl + Alt + S";
     position: absolute;
     top: 2.4em;
     left: 1em;
@@ -101,6 +101,7 @@ iframe {
     line-height: 18px;
     text-transform: capitalize;
     cursor: default;
+    text-align: left;
 }
 
 #tooltipdemo2 {
@@ -131,10 +132,12 @@ iframe {
 
 a {
     text-decoration: none;
+    transition: color .2s;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #ff0051b4;
 }
 
 .text-highlight {
@@ -147,4 +150,21 @@ a:hover {
 
 .text-less {
     color: rgb(214, 214, 214);
+}
+
+.text-ni {
+    color: rgb(85, 85, 85);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+}
+
+.github-link {
+    top: .3em;
+    right: 1em;
 }

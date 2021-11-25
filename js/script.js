@@ -109,7 +109,7 @@ function openWindow() {
             value: 'second',
             text: 'Second'
         }],
-        newWindow = window.open("", null, "height=400,width=900,status=yes,toolbar=no,menubar=no,location=no,resizable=yes");
+        newWindow = window.open("", null, "height=700,width=1100,status=yes,toolbar=no,menubar=no,location=no,resizable=yes");
 
     newWindow.document.close();
     newWindow.document.open();
@@ -129,6 +129,7 @@ function openWindow() {
           </body>
         </html>
         `);
+    window.focus()
 }
 
 function updateIframe() {

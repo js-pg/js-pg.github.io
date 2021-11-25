@@ -2,4 +2,4 @@
 Quickly create ideas in JS, HTML, & CSS
 
 Demo: 
-![demo gif](/img/jspg-demo1.mp4)
+![demo gif](/img/jspg-demo.mp4)

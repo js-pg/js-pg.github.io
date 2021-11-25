@@ -30,13 +30,12 @@
 <body>
     <div class="container-fluid w-100">
         <div class="row">
-            <div class="col-8">
+            <div class="col-8 m-0 p-0">
                 <div class="row tabs">
                     <div id="displayLang" class="col w-100 text-center text-light text--small align-middle justify-content-center">
                         Language: JS
                     </div>
                     <div class="col w-200" style="border: none;"></div>
-
                     <div id="tab" onclick="showTab('code')" class="col w-100 text-center bg-main tab"><span class="text-secondary">JS</span></div>
                     <div id="tab1" onclick="showTab('code1')" class="col w-100 text-center bg-main tab"><span class="text-secondary">HTML</span></div>
                     <div id="tab2" onclick="showTab('code2')" class="col w-100 text-center bg-main tab"><span class="text-secondary">CSS</span></div>
@@ -53,7 +52,6 @@
                 <h1 style="color: #4b7bff;" class=" opacity-100 w-100 text-center">JS Playground</h1>
                 <div class="d-flex flex-column w-100 justify-content-center align-items-center mt-4">
                     <button onclick="updateIframe();" type="button" class="btn shadow font-weight-700 text-light d-flex align-items-center run-pg justify-content-center w-50" id="tooltipdemo" aria-describedby="tooltip">
-
                         Run Playground&nbsp;
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
                             height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -64,17 +62,13 @@
                                 d="M719.4 499.1l-296.1-215A15.9 15.9 0 0 0 398 297v430c0 13.1 14.8 20.5 25.3 12.9l296.1-215a15.9 15.9 0 0 0 0-25.8zm-257.6 134V390.9L628.5 512 461.8 633.1z">
                             </path>
                         </svg>
-
                     </button>
                     <div class="form-check form-switch m-3">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault"><span>&nbsp;Run output in pop up</span></label>
+                        <label class="form-check-label" for="flexSwitchCheckDefault"><span class="text-less">&nbsp;Run output in pop up</span></label>
                     </div>
-
                 </div>
-
                 <hr>
-
                 <div style="padding: 0;" class="container mt-5 w-100">
                     <div class="row">
                         <div class="col w-100 m-0 p-0 mw-50">
@@ -118,39 +112,39 @@
 
 
                                     <div class="row d-flex justify-content-center align-items-center text-center">
-                                        <p class="p-0 mb-3 font-size-small">
-                                            <kbd class="border border-light">Ctrl</kbd><kbd class="m-1 border border-light">Alt</kbd><kbd class="border border-light">S</kbd>: <span>Run Playground</span>
+                                        <p class="p-0 mb-3 font-size-small text-less">
+                                            <kbd class="border border-light text-less">Ctrl</kbd><kbd class="m-1 border border-light text-less">Alt</kbd><kbd class="border border-light text-less">S</kbd>: <span>Run Playground</span>
                                         </p>
                                     </div>
 
 
                                     <div class="row d-flex justify-content-center align-items-center text-center">
                                         <hr class="p-0 mb-3">
-                                        <p class="p-0 mb-3 font-size-small">
-                                            <kbd class="border border-light">Shift</kbd><kbd class="m-1 border border-light">Alt</kbd><kbd class="border border-light">F</kbd>: <span>Format Text</span>
+                                        <p class="p-0 mb-3 font-size-small text-less">
+                                            <kbd class="border border-light text-less">Shift</kbd><kbd class="m-1 border border-light text-less">Alt</kbd><kbd class="border border-light text-less">F</kbd>: <span>Format Text</span>
                                         </p>
                                     </div>
 
 
                                     <div class="row d-flex justify-content-center align-items-center text-center">
                                         <hr class="p-0 mb-3">
-                                        <p class="p-0 mb-3 font-size-small">
-                                            <kbd class="border border-light">Ctrl</kbd><kbd class="m-1 border border-light">C</kbd>: <span>Copy Whole Line</span>
+                                        <p class="p-0 mb-3 font-size-small text-less">
+                                            <kbd class="border border-light text-less">Ctrl</kbd><kbd class="m-1 border border-light text-less">C</kbd>: <span>Copy Whole Line</span>
                                         </p>
                                     </div>
 
 
                                     <div class="row d-flex justify-content-center align-items-center text-center">
                                         <hr class="p-0 mb-3">
-                                        <p class="p-0 mb-3 font-size-small">
-                                            <kbd class="border border-light">Ctrl</kbd><kbd class="m-1 border border-light">X</kbd>: <span>Cut Whole Line</span>
+                                        <p class="p-0 mb-3 font-size-small text-less">
+                                            <kbd class="border border-light text-less">Ctrl</kbd><kbd class="m-1 border border-light text-less">X</kbd>: <span>Cut Whole Line</span>
                                         </p>
                                     </div>
 
                                     <div class="row d-flex justify-content-center align-items-center text-center">
                                         <hr class="p-0 mb-3">
-                                        <p class="p-0 mb-3 font-size-small">
-                                            <kbd class="border border-light">Ctrl</kbd><kbd class="m-1 border border-light">V</kbd>: <span>Paste Clipboard</span>
+                                        <p class="p-0 mb-3 font-size-small text-less">
+                                            <kbd class="border border-light text-less">Ctrl</kbd><kbd class="m-1 border border-light text-less">V</kbd>: <span>Paste Clipboard</span>
                                         </p>
                                     </div>
                                 </div>
@@ -161,9 +155,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <script src="https://unpkg.com/tooltip.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs/loader.min.js"></script>

@@ -109,7 +109,7 @@ function openWindow() {
             value: 'second',
             text: 'Second'
         }],
-        newWindow = window.open("", null, "height=200,width=400,status=yes,toolbar=no,menubar=no,location=no,resizable=yes");
+        newWindow = window.open("", null, "height=400,width=900,status=yes,toolbar=no,menubar=no,location=no,resizable=yes");
 
     newWindow.document.close();
     newWindow.document.open();
@@ -160,3 +160,8 @@ document.onkeyup = function(e) {
         updateIframe()
     }
 };
+
+window.onresize = function() {
+    if ((window.outerHeight - window.innerHeight) > 100)
+        alert('ty for inspecting -- idk why the editor doesnt resize, but when you relaod it works normally with varying screen sizes, have a nice day :)');
+}

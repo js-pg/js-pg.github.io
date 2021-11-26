@@ -1,0 +1,15 @@
+* {
+    font-family: 'Space Mono';
+}
+
+body {
+    background-color: #1e1e1e;
+    z-index: -1;
+}
+
+
+.login-card {
+    background-color: #272727;
+    border-radius:12px;
+    width: fit-content;
+}

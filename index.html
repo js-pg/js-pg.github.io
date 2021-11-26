@@ -197,6 +197,30 @@
     <script src="js/localstorage.js"></script>
 
 
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyC1n8kZ8WHmOSDJBnBm05jKL_ZGbZmRxPU",
+          authDomain: "js-pground.firebaseapp.com",
+          projectId: "js-pground",
+          storageBucket: "js-pground.appspot.com",
+          messagingSenderId: "604253334418",
+          appId: "1:604253334418:web:ce0144a04733ae56c62f4b",
+          measurementId: "G-7MQQBC29RP"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
 </body>
 
 </html>

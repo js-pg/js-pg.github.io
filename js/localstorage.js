@@ -15,25 +15,18 @@ function clearLocalStorage(key) {
 };
 
 function checkIfLocalStorageExists(key) {
-    if (window.localStorage(key) === undefined) {
-
+    if (window.localStorage.getItem(key) === undefined) {
+        return false;
     } else {
-        console.log("localStorage not found: " + key);
+        return true;
     };
 };
 
-function displayLocalStorage() {
+setTimeout(function() {
     editor.getModel().setValue(getLocalStorage("js"));
     editor1.getModel().setValue(getLocalStorage("html"));
     editor2.getModel().setValue(getLocalStorage("css"));
-};
 
 
 
-setTimeout(() => {
-
-    setLocalStorage("js", editor.getValue());
-    setLocalStorage("html", editor1.getValue());
-    setLocalStorage("css", editor2.getValue());
-
-}, 1500);
+}, 1800)

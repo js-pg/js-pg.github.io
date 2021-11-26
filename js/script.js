@@ -154,6 +154,9 @@ function updateIframe() {
     if (document.getElementById('flexSwitchCheckDefault').checked == true) {
         openWindow();
     };
+    setLocalStorage("js", editor.getValue());
+    setLocalStorage("html", editor1.getValue());
+    setLocalStorage("css", editor2.getValue());
 };
 
 document.onkeyup = function(e) {

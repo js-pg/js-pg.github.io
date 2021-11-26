@@ -3,12 +3,6 @@
     border: none;
     outline: none;
     font-family: 'Space Mono', 'Inconsolata', monospace, sans-serif;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    background-color: #1e1e1e;
 }
 
 .bg-main {
@@ -17,6 +11,7 @@ html {
 
 body {
     background-color: #1e1e1e;
+    z-index: -1;
 }
 
 html {
@@ -167,4 +162,8 @@ a:hover {
 .github-link {
     top: 97vh;
     left: 15px;
+}
+
+#myModal {
+    z-index: 800;
 }

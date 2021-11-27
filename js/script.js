@@ -167,5 +167,5 @@ document.onkeyup = function(e) {
 
 window.onresize = function() {
     if ((window.outerHeight - window.innerHeight) > 100)
-        alert('ty for inspecting -- idk why the editor doesnt resize, but when you relaod it works normally with varying screen sizes, have a nice day :)');
-};
+        console.log('%c Ty for inspecting, idk why the editor doesnt resize on the fly but whe you refresh ot should work. Have a nice day!', 'font-family: arial,sans-serif; font-size: 25px;');
+}

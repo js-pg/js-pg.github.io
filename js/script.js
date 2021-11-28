@@ -217,8 +217,7 @@ function clearScripts() {
     scriptsrc = ``;
     scriptsrcarray = [];
 };
-
-//function to display font size in fontsizedisplay from fontrange
+console.log('hey')
 function fontSizeDisplay() {
     document.getElementById('fontsizedisplay').innerText = document.getElementById('fontrange').value;
     editor.updateOptions({

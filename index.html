@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/monaco.css">
+    <link rel="stylesheet" href="css/micromodal.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -72,14 +73,15 @@
                     <div id="tab3" onclick="showTab('code3')" class="col w-100 text-center bg-main tab"><span
                             class="text-secondary">Output</span></div>
                 </div>
-                <div alt="Code editor for JavaScript" id="code" class="editor"></div>
-                <div alt="Code editor for HTML" id="code1" class="editor"></div>
-                <div alt="Code editor for CSS" id="code2" class="editor"></div>
+                <div style="height: 96.6vh;" alt="Code editor for JavaScript" id="code" class="editor"></div>
+                <div style="height: 96.6vh;" alt="Code editor for HTML" id="code1" class="editor"></div>
+                <div style="height: 96.6vh;" alt="Code editor for CSS" id="code2" class="editor"></div>
                 <div alt="Code editor output" id="code3" class="editor">
                     <iframe src="" frameborder="0" id="output" class="h-100 editor w-100"></iframe>
                 </div>
             </div>
-            <div class="col-4 text-light bg-main align-items-center position-relative">
+            <div class="col-4 text-light bg-main align-items-center position-relative"
+                style="max-height: 100vh; overflow-y: scroll;">
 
                 <h1 style="color: #4b7bff;" class=" opacity-100 w-100 text-center p-0 m-0 mt-2 mb-3">JS Playground</h1>
 
@@ -117,9 +119,10 @@
                         <div class="col w-100 m-0 p-0 mw-50">
                             <div class="container w-100">
                                 <div class="row d-flex justify-content-center align-items-center">
-                                    <h4 class="text-center"><svg alt="Settings icon" class="text-highlight" stroke="currentColor" fill="none" stroke-width="2"
-                                            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
-                                            height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <h4 class="text-center"><svg alt="Settings icon" class="text-highlight"
+                                            stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="12" cy="12" r="3"></circle>
                                             <path
                                                 d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
@@ -133,8 +136,9 @@
                                         </svg>
                                     </h4>
                                 </div>
-                                <div class="row d-flex justify-content-center align-items-center">
-                                    <p class="text-center hover-underline cursor-pointer">Import JS Library</p>
+                                <div class="row d-flex justify-content-center align-items-center"
+                                    onclick="togglemodal()">
+                                    <p class="text-center hover-underline cursor-pointer">Import CDN Library</p>
                                 </div>
                                 <div class="row d-flex justify-content-center align-items-center">Sup!</div>
                                 <div class="row d-flex justify-content-center align-items-center">Sup!</div>
@@ -210,6 +214,7 @@
                                                 Clipboard</span>
                                         </p>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -229,10 +234,87 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
+    <!-- 
+                        MODAL:
+    -->
+    <div class="modal-container position-absolute" id="modal" style="display: none">
+        <div class="modal-content p-5 bg-main position-relative">
+            <div class="close position-absolute m-3 cursor-pointer text-highlight" id="close" onclick="togglemodal()">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em"
+                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 0 0-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+                    </path>
+                    <path
+                        d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                </svg>
+            </div>
+
+            <p style="color: var(--bs-gray-300);" class="m-0 p-0">Note: CDN's currently only work in Popup outputs</p>
+
+
+            <h1 style="color:#4b7bff" class="modal-title mb-2 mt-1">Import a Library</h1>
+            <p class="w-100 p-0 mb-1" style="color: var(--bs-gray-300)">Add your CDN link here:</p>
+            <div class="input-group mb-2">
+
+                <input type="text" placeholder="https://your-cdn-link/cool.file" class="form-control"
+                    aria-label="Text input with dropdown button" id="cdn">
+            </div>
+            <div class="btn-group btn-group-toggle m-2" data-toggle="buttons">
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active" id="js-option">
+                        <input type="radio" name="filetype" id="option1" autocomplete="off" checked> JS
+                    </label>
+                    <label class="btn btn-secondary" id="css-option">
+                        <input type="radio" name="filetype" id="option2" autocomplete="off"> CSS
+                    </label>
+
+                </div>
+            </div>
+            <div class="btn-group btn-group-toggle m-2 mt-1" data-toggle="buttons">
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active" id="body-option">
+                        <input type="radio" name="where" id="option3" autocomplete="off" checked> &lt;body&gt;
+                    </label>
+                    <label class="btn btn-secondary" id="head-option">
+                        <input type="radio" name="where" id="option4" autocomplete="off"> &lt;head&gt;
+                    </label>
+
+                </div>
+            </div>
+            <button onclick="addScript(document.getElementById('cdn').value)" type="button"
+                class="btn shadow font-weight-700 text-light d-flex align-items-center run-pg justify-content-center mt-3">
+                Add&nbsp;
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em"
+                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z">
+                    </path>
+                </svg>
+            </button>
+            <button onclick="clearScripts()"
+                class="btn shadow font-weight-700 text-light d-flex align-items-center run-pg justify-content-center mt-3">
+                Clear All&nbsp;
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none"
+                        d="M17.004 20L17.003 8h-1-8-1v12H17.004zM13.003 10h2v8h-2V10zM9.003 10h2v8h-2V10zM9.003 4H15.003V6H9.003z">
+                    </path>
+                    <path
+                        d="M5.003,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8h2V6h-3h-1V4c0-1.103-0.897-2-2-2h-6c-1.103,0-2,0.897-2,2v2h-1h-3 v2h2V20z M9.003,4h6v2h-6V4z M8.003,8h8h1l0.001,12H7.003V8H8.003z">
+                    </path>
+                    <path d="M9.003 10H11.003V18H9.003zM13.003 10H15.003V18H13.003z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
 
     <script src="https://unpkg.com/tooltip.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs/loader.min.js"></script>

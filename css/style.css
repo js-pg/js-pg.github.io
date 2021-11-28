@@ -2,7 +2,7 @@
     margin: 0;
     border: none;
     outline: none;
-    font-family: 'Space Mono', 'Inconsolata', monospace, sans-serif;
+    font-family:'Space Mono', 'Inconsolata', monospace, sans-serif;
     z-index: 1;
 }
 
@@ -124,3 +124,4 @@ a:hover {
 .close svg:hover {
     color: #ffffff;
 }
+

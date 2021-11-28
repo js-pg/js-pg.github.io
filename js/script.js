@@ -218,3 +218,27 @@ function clearScripts() {
     scriptsrcarray = [];
 };
 
+//function to display font size in fontsizedisplay from fontrange
+function fontSizeDisplay() {
+    document.getElementById('fontsizedisplay').innerText = document.getElementById('fontrange').value;
+    editor.updateOptions({
+        fontSize: document.getElementById('fontrange').value
+    });
+    editor1.updateOptions({
+        fontSize: document.getElementById('fontrange').value
+    });
+    editor2.updateOptions({
+        fontSize: document.getElementById('fontrange').value
+    });
+}
+
+fontSizeDisplay();
+
+function applyClass(className) {
+    var elements = document.getElementsByTagName('*');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add(className);
+    };
+};
+applyClass('p-0');
+applyClass('m-0');

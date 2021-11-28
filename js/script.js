@@ -230,7 +230,7 @@ function fontSizeDisplay() {
     editor2.updateOptions({
         fontSize: document.getElementById('fontrange').value
     });
-}
+};
 
 fontSizeDisplay();
 

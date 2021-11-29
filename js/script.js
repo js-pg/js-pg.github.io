@@ -197,12 +197,24 @@ function appendScript(src) {
 //for each script src in scriptsrcarray, append to scriptsrc
 function appendScripts() {
     for (var i = 0; i < scriptsrcarray.length; i++) {
+        //if ends in .js, append to scriptsrc
+        if (scriptsrcarray[i].endsWith('.js')) {
         scriptsrc += `<script src="${scriptsrcarray[i]}"></script>
-
-        `
-        // if scriptsrc is in the array, remove it
-        if (scriptsrcarray.includes(scriptsrc)) {
+`              // if scriptsrc is in the array, remove it
+            if (scriptsrcarray.includes(scriptsrc)) {
             scriptsrcarray.splice(scriptsrcarray.indexOf(scriptsrc), 1);
+            }
+        //if ends in .css, append to style    
+        } else if (scriptsrcarray[i].endsWith('.css')) {
+            scriptsrc += `<link rel="stylesheet" href="${scriptsrcarray[i]}">
+`
+            if (scriptsrcarray.includes(scriptsrc)) {
+                scriptsrcarray.splice(scriptsrcarray.indexOf(scriptsrc), 1);
+            }
+        }
+        else {
+            alert('Invalid file type, see console');
+            console.log(`%c${scriptsrcarray[i]} is not a valid file type; must end in .js or .css`, 'color: red; font-size: 26px');           
         }
     }
 }
@@ -211,7 +223,10 @@ function appendScripts() {
 function addScript(src) {
     appendScript(src);
     appendScripts();
-    updateIframe();
+
+    if (src.endsWith('.js') || src.endsWith('.css')) {
+        updateIframe();
+    }
 };
 
 //function to clear scriptsrc
@@ -243,3 +258,12 @@ function applyClass(className) {
 };
 applyClass('p-0');
 applyClass('m-0');
+
+// confirm clear scriptsrc
+function confirmClearScripts() {
+    if (confirm(`Are you sure you want to clear all linked files?
+
+You won't be able to undo this.`)) {
+        clearScripts();
+    }
+}

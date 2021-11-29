@@ -10,9 +10,15 @@ function setLocalStorage(key, value) {
     window.localStorage.setItem(key, value)
 };
 
-function clearLocalStorage(key) {
-    window.localStorage.removeItem(key);
-};
+function clearLocalStorage() {
+    var clear = confirm('Are you sure you want to clear your saves?');
+    if (clear) {
+        localStorage.clear();
+        alert('Saves cleared');
+    } else {
+        alert('No saves cleared');
+    }
+}
 
 function checkIfLocalStorageExists(key) {
     if (window.localStorage.getItem(key) === undefined) {

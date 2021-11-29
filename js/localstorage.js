@@ -36,3 +36,10 @@ setTimeout(function() {
 
 
 }, 1800)
+
+//function to prompt user to save before leaving page if there are unsaved changes
+window.onbeforeunload = function() {
+    if (editor.getModel().getValue() != getLocalStorage("js") || editor1.getModel().getValue() != getLocalStorage("html") || editor2.getModel().getValue() != getLocalStorage("css")) {
+        return "You have unsaved changes. Are you sure you want to leave?";
+    }
+}
